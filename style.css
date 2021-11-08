@@ -1,0 +1,58 @@
+html {
+  height: 100%;
+}
+
+body {
+  background-color: black;
+  background-image: url("assets/elonmusk.png");
+  background-repeat:no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif
+}
+
+#bitcoinImg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#bitcoinTitleH {
+  display: table;
+  font-size: 32pt;
+  margin: auto;
+}
+
+#bitcoinSpan {
+  display: table;
+  font-size: 32pt;
+  margin: auto;
+}
+
+.upgradeClass {
+  display: table;
+  font-size: 14pt;
+}
+
+.upgradeNumClass {
+  font-size: 14pt;
+}
+
+.buyButtonClass {
+  background-color: darkgray;
+  color: black;
+  height: 50;
+  font-family: 'Courier New', Courier, monospace
+}
+
+#muteSound {
+  float: right;
+  background-color: blue;
+  color: white;
+}
+
+
+.priceClass {
+  color: white;
+}
