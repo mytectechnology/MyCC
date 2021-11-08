@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-97RDW42992"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+  
+      gtag('config', 'G-97RDW42992');
+    </script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>MyCC - Online Clicker Oyunu</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="/assets/favicon.png">
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <button id="muteSound" onclick="soundMute()"> Sesi Kapat </button>
+    <br>
+    <br>
+    <button style="float:right" onclick="reset()" class="buyButtonClass"> Sıfırla </button>
+    <br>
+    <br>
+    <button style="float:right" onclick="startAlert()" class="buyButtonClass"> Başlangıç Kılavuzu :) </button>
+    <br>
+    <br>
+    <span title="Toplam `Master's Yeeter Currency Cash´" id="bitcoinTitleH"> Toplam MyCC </span>
+    <span id="bitcoinSpan"> 0 </span>
+    <span id="cpsCount" style="display: table;font-size: 16pt;margin: auto;"> CPS: </span>
+    <span id="cpsSpan" style="display: table;font-size: 16pt;margin: auto;"> 0 </span>
+    <div>
+      <img src="/assets/bitcoin.png" id="bitcoinImg" onclick="crypMine()">
+    </div>
+    <br>
+    <div>
+      <div style="height:30vh;width:200px;border:1px solid #ccc;overflow:auto;max-width:150px;margin-top:100;float:left;position:absolute;bottom:0;">
+        
+        
+        <span title="Klavyeler: CPS'yi ikiye katlar." class="upgradeClass">   Klavyeler: </span>
+        <span id="keyboardSpan" class="upgradeNumClass"> 1 </span>
+        <br>
+        <span title="Tıklayıcılar: saniyede 0.1 MyCC kazar." class="upgradeClass"> Tıklayıcılar: <span>
+        <br>
+        <span id="clickerSpan" class="upgradeNumClass"> 0 </span>
+        <br>
+        
+        <span title="Botlar: 10 saniyede 1 MyCC kazarlar." class="upgradeClass"> Botlar: </span>
+        <span id="botSpan" class="upgradeNumClass"> 0 </span>
+        <br>
+        
+        <span title="Güçlü Botlar: 5 saniyede 1 MyCC kazarlar." class="upgradeClass"> Güçlü Botlar: </span>
+        <span id="tier2botSpan" class="upgradeNumClass"> 0 </span>
+        <br>
+        <span title="Havalı Botlar: 2.5 saniyede 1 MyCC kazarlar." class="upgradeClass"> Havalı Botlar: </span>
+        <span id="tier3botSpan" class="upgradeNumClass"> 0 </span>
+        <br>
+        <span title="Hacker Botlar: elinizdeki her klavye için kazarlar." class="upgradeClass"> Hacker Botlar: </span>
+        <span id="tier4botSpan" class="upgradeNumClass"> 0 </span>
+        <br>
+        <span title="Hızlı Botlar: hızlı kazarlar fakat 2 MyCC kazarlar." class="upgradeClass"> Hızlı Botlar: </span>
+        <span id="tier5botSpan" class="upgradeNumClass"> 0 </span>
+        <br>
+        <span title="Hızlı+ Botlar: çok hızlı kazarlar fakat limitleri 100 MyCC'dir." class="upgradeClass"> Hızlı+ Botlar: </span>
+        <span id="tier6botSpan" class="upgradeNumClass"> 0 </span>
+        <br>
+        <span title="Hacker+ Botlar: daha hızlı ve 10 klavye daha varmış gibi kazarlar." class="upgradeClass"> Hacker+ Botlar: </span>
+        <span id="tier7botSpan" class="upgradeNumClass"> 0 </span>
+        <span title="Aşırı Maşırı Havalı Süper Hacker Botlar: rastgele yüksek değerlerde MyCC kazarlar." class="upgradeClass"> Aşırı Maşırı Havalı Süper Hacker Botlar: </span>
+        <span id="dogeCoinBotSpan" class="upgradeNumClass"> 0 </span>
+        <br>
+      </div>
+      <div style="height:30vh;width:200px;border:1px solid #ccc;overflow:auto;margin-left:auto;margin-right:0;margin-top:0;float:right;position:absolute;bottom:0;right:0;">
+        
+        <button onclick="buyKeyboard()" title="Klavye al, CPS'ni ikiye katla(CPS 0 iken önerilmez)! [𝕊𝕖𝕧𝕚𝕪𝕖 𝕀]" class="buyButtonClass"> Klavye Al </button>
+        <br>
+        <span class="priceClass"> Ücret: </span>
+        <span id="keyboardPrice" class="priceClass"> 75 </span>
+        <br>
+
+        <button onclick="buyClicker()" title="Tıklayıcı al, 10 saniyede 1 MyCC kazsın! [𝕊𝕖𝕧𝕚𝕪𝕖 𝕀𝕀]" class="buyButtonClass"> Tıklayıcı Al </button>
+        <br>
+        <span class="priceClass"> Ücret: </span>
+        <span id="clickerPrice" class="priceClass"> 10 </span>
+        <br>
+        
+        <button onclick="buyBot()" title="Bot al, 10 saniyede bir senin için kazsın! [𝕊𝕖𝕧𝕚𝕪𝕖 𝕀𝕀𝕀]" class="buyButtonClass"> Bot Al </button>
+        <br>
+        <span class="priceClass"> Ücret: </span>
+        <span id="botPrice" class="priceClass"> 200 </span>
+        <button onclick="buyBotUpgraded1()" title="Güçlü Bot al, 5 saniyede 1 MyCC kazsın! [𝕊𝕖𝕧𝕚𝕪𝕖 𝕀𝕍]" class="buyButtonClass"> Güçlü Bot Al </button>
+        <br>
+        <span class="priceClass"> Ücret: </span>
+        <span id="botUpgrade1Price" class="priceClass"> 700 </span>
+        <br>
+        <button onclick="buyBotUpgraded2()" title="Havalı Bot al,  2.5 saniyede 1 MyCC kazsın! [𝕊𝕖𝕧𝕚𝕪𝕖 𝕍]" class="buyButtonClass"> Havalı Bot Al </button>
+        <br>
+        <span class="priceClass"> Ücret: </span>
+        <span id="tier3botPrice" class="priceClass"> 2000 </span>
+        <br>
+        <button onclick="buyBotUpgraded3()" title="Hacker Bot al, elindeki her klavye için kazsın! [𝕊𝕖𝕧𝕚𝕪𝕖 𝕍𝕀]" class="buyButtonClass"> Hacker Bot Al </button>
+        <br>
+        <span class="priceClass"> Ücret: </span>
+        <span id="tier4botPrice" class="priceClass"> 10000 </span>
+        <br>
+        <button onclick="buyBotUpgraded4()" title="Hızlı Bot al, çok hızlı MyCC kazsın(2 MyCC)! [𝕊𝕖𝕧𝕚𝕪𝕖 𝕍𝕀𝕀]" class="buyButtonClass"> Hızlı Bot Al </button>
+        <br>
+        <span class="priceClass"> Ücret: </span>
+        <span id="tier5botPrice" class="priceClass"> 50000 </span>
+        <br>
+        <button onclick="buyBotUpgraded5()" title="Hızlı+ Bot al, aşırı hızlı MyCC kazsın(Limit: 100 MyCC)! [𝕊𝕖𝕧𝕚𝕪𝕖 𝕍𝕀𝕀𝕀]" class="buyButtonClass"> Hızlı+ Bot Al </button>
+        <br>
+        <span class="priceClass"> Ücret: </span>
+        <span id="tier6botPrice" class="priceClass"> 300000 </span>
+        <br>
+        <button onclick="buyBotUpgraded6()" title="Hacker+ Bot al, çok daha hızlı ve ekstra 10 klavye için kazsın! [𝕊𝕖𝕧𝕚𝕪𝕖 𝕀𝕏]" class="buyButtonClass"> Hacker+ Bot Al </button>
+        <br>
+        <span class="priceClass"> Ücret: </span>
+        <span id="tier7botPrice" class="priceClass"> 700000 </span>
+        <br>
+        <button onclick="buyDogecoinBot()" title="Aşırı Maşırı Havalı Süper Hacker Bot al, 10 saniyede bir rastgele yüksek boyutlarda MyCC kazsın! [𝕊𝕖𝕧𝕚𝕪𝕖 𝕏]" class="buyButtonClass"> Aşırı Maşırı Havalı Süper Hacker Bot Al </button>
+        <br>
+        <span class="priceClass"> Ücret: </span>
+        <span id="dogeCoinBotPrice" class="priceClass"> 1000000 </span>
+        <br>
+      </div>
+    </div>
+  </body>
+</html>
